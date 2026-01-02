@@ -1,0 +1,173 @@
+:root {
+    /* Colors - Cyberpunk/Pro Theme */
+    --bg-dark: #09090b;
+    /* Deep Zinc */
+    --panel-bg: #18181b;
+    /* Panel Background */
+    --border: #27272a;
+    /* Subtle Borders */
+    --accent: #8b5cf6;
+    /* Electric Purple */
+    --accent-glow: rgba(139, 92, 246, 0.4);
+    --pcb-cyan: #38bdf8;
+    /* Electric Blue/Cyan for PCB elements */
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --text-code: #e4e4e7;
+
+    /* Typography */
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+    /* Spacing */
+    --space-2: 8px;
+    --space-4: 16px;
+    --space-6: 24px;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #52525b;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Utility Classes */
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.gap-2 {
+    gap: var(--space-2);
+}
+
+.gap-4 {
+    gap: var(--space-4);
+}
+
+.text-dim {
+    color: var(--text-secondary);
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+/* Markdown Styles (applied to rendered content) */
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.markdown-body h3 {
+    font-size: 1.1em;
+}
+
+.markdown-body p {
+    margin-bottom: 1em;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+    padding-left: 1.5em;
+    margin-bottom: 1em;
+}
+
+.markdown-body code {
+    font-family: var(--font-mono);
+    background: #27272a;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #e4e4e7;
+}
+
+.markdown-body pre {
+    background: #111113;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    overflow-x: auto;
+    margin-bottom: 1em;
+}
+
+.markdown-body pre code {
+    background: none;
+    padding: 0;
+    border: none;
+    color: #a5b3ce;
+}
+
+.markdown-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+    font-size: 0.9em;
+}
+
+.markdown-body th,
+.markdown-body td {
+    border: 1px solid var(--border);
+    padding: 8px;
+    text-align: left;
+}
+
+.markdown-body th {
+    background: #27272a;
+    font-weight: 600;
+}

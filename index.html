@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoardGPT - Modern AI Workspace</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- React-specific overrides (Minimal) -->
+    <style>
+        #root {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+            background: var(--bg-dark);
+        }
+
+        #error-overlay {
+            display: none;
+            /* Handled by UI now */
+        }
+    </style>
+
+    <!-- Import Map -->
+    <script type="importmap">
+    {
+        "imports": {
+            "preact": "https://esm.sh/preact@10.26.4",
+            "preact/hooks": "https://esm.sh/preact@10.26.4/hooks",
+            "htm/preact": "https://esm.sh/htm@3.1.1/preact",
+            "lucide-preact": "https://esm.sh/lucide-preact@0.477.0",
+            "three": "https://esm.sh/three@0.160.0",
+            "marked": "https://esm.sh/marked@11.1.1"
+        }
+    }
+    </script>
+    <link rel="modulepreload" href="https://esm.sh/preact@10.26.4">
+    <link rel="modulepreload" href="https://esm.sh/htm@3.1.1">
+</head>
+
+<body>
+    <div id="error-overlay"></div>
+    <div id="root"></div>
+
+    <!-- Main Entry -->
+    <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
