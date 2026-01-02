@@ -1,6 +1,6 @@
 import { html } from 'htm/preact';
 import { Sidebar } from './Sidebar.js';
-import { Canvas } from './Canvas.js';
+import { BoardVisualizer } from './BoardVisualizer.js'; // <--- ИЗМЕНЕНО: Импортируем Visualizer
 import { ThreeCanvas } from './ThreeCanvas.js';
 import { Toolbar } from './Toolbar.js';
 import { useBoardStore } from '../context/Store.js';
@@ -13,14 +13,11 @@ export function App() {
             <${Sidebar} />
             
             <div style="flex: 1; position: relative; background: #000;">
-                <!-- Dot Grid Background -->
-                <div style="position: absolute; inset: 0; background-image: radial-gradient(#333 1px, transparent 1px); background-size: 24px 24px; opacity: 0.5; pointer-events: none;"></div>
-
-                ${is3DMode ? html`<${ThreeCanvas} />` : html`<${Canvas} />`}
+                
+                ${is3DMode ? html`<${ThreeCanvas} />` : html`<${BoardVisualizer} />`}
                 
                 <${Toolbar} />
 
-                <!-- Header Actions (ghost button) -->
                 <div style="position: absolute; top: 24px; right: 24px; z-index: 10;" title=${!isDesignReady ? "Generate a PCB Plan first" : ""}>
                     <button 
                         onClick=${() => isDesignReady && setIs3DMode(!is3DMode)}
